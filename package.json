@@ -1,0 +1,24 @@
+{
+  "author": "Dotan Nahum",
+  "dependencies": {
+    "rxjs": "^5.0.0-beta.10",
+    "lodash":"^3.10.0"
+  },
+  "description": "Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge.",
+  "devDependencies": {},
+  "directories": {},
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "jondotan@gmail.com",
+      "name": "Dotan Nahum"
+    }
+  ],
+  "name": "rn-snoopy",
+  "optionalDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.5"
+}
