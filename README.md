@@ -21,6 +21,11 @@ and the Native world happen. Optimizing and catching unexpected (bad)
 communications can make or break your performance. Being that central and
 sensitive place, it made sense to have tooling built around it.
 
+<h3 align="center">
+  <img src="media/snoopy.gif" alt="Snoopy" width="400px"/>
+  <br/>
+  <br/>
+</h3>
 
 
 ## Quick Start
@@ -115,11 +120,11 @@ bars(info=>JSON.stringify(info.args).length)(
 ```
 
 
-Visualize "heavy" calls across the bridge. Set a threshold and pop a Yellowbox in Simulator
+Visualize "heavy" calls across the bridge. Set a threshold (`100`) and pop a Yellowbox (`true`) in Simulator
 to warn about crossing the threshold.
 
 ```javascript
-bars(info=>JSON.stringify(info.args).length)(
+bars(infoAry=>infoAry.length, 100, true).length)(
   events
 ).subscribe()
 ```
