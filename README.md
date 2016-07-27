@@ -13,13 +13,16 @@ Snoopy is a profiling tool for React Native, that lets you snoop on the React Na
 
 With Snoopy you can tame a stream of events, using
 [Rx](https://github.com/Reactive-Extensions/RxJS) and a few built-in goodies,
-to locate performance hogs, problems, and expose unexpected communications.
+to locate performance hogs, problems, and expose unexpected communications on the bridge.
 
 
 The React Native bridge is the hub where communication between the Javascript
 and the Native world happen. Optimizing and catching unexpected (bad)
 communications can make or break your performance. Being that central and
 sensitive place, it made sense to have tooling built around it.
+
+*NOTE*: Please see [bleeding edge](#bleeding-edge) to understand how Snoopy works and why you should only use it in DEV.
+
 
 <h3 align="center">
   <img src="media/snoopy.gif" alt="Snoopy" width="400px"/>
@@ -138,6 +141,14 @@ bars(info=>JSON.stringify(info.args).length)(
     filter({ method:'createView' })(events)
 ).subscribe()
 ```
+
+# Bleeding Edge
+
+Snoopy works by taking the current `SPY_MODE` flag in the bridge queue, and building upon it. It makes the event reporting more
+structured and generic, and plugs a firehose for you to sip events from. Since currently the existing `SPY_MODE` code only
+prints logs and the Bridge->Queue->log chain is a singleton chain initialized much before userland code, I had to monkeypatch the queue to make it report to something more generic.
+
+Although I have tested Snoopy in both old and modern React Native versions, hopefully, I could submit a PR that only handles the reporting mechanism into React Native upstream and the monkeypatch in Snoopy will go away.
 
 
 # Contributing
