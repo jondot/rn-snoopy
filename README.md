@@ -25,7 +25,8 @@ sensitive place, it made sense to have tooling built around it.
 
 
 <h3 align="center">
-  <img src="media/snoopy.gif" alt="Snoopy" width="400px"/>
+  <img src="media/snoopy.gif" alt="Aggregating and Charting Events with Bar" width="400px"/>
+  <img src="media/snoopy-filter.gif" alt="Filtering Create Views Only" width="400px"/>
   <br/>
   <br/>
 </h3>
