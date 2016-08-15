@@ -1,0 +1,14 @@
+{
+  "name": "Snoopful",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "ramda": "^0.22.1",
+    "react": "15.2.1",
+    "react-native": "0.31.0",
+    "rxjs": "^5.0.0-beta.11"
+  }
+}

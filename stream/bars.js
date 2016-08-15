@@ -1,7 +1,7 @@
 
 const normal = '▒'
 const crazy = '▇'
-export default (valuefn=(ary)=>ary.length, threshold=100, yellowbox=false)=>events=>events.tap(
+export default (valuefn=(ary)=>ary.length, threshold=100, yellowbox=false)=>events=>events.do(
         (infoAry)=>{
           const len = valuefn(infoAry)
           if(yellowbox && len >= threshold){

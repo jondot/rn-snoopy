@@ -1,3 +1,3 @@
 
-export default (time=1000)=>events=>events.bufferWithTime(time)
+export default (time=1000)=>events=>events.bufferTime(time)
 

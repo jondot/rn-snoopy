@@ -1,4 +1,4 @@
-import Rx from 'rx'
+import Rx from 'rxjs'
 import { spy as log } from '../log'
 
 
