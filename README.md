@@ -51,11 +51,7 @@ import bars from 'rn-snoopy/stream/bars'
 import filter from 'rn-snoopy/stream/filter'
 import buffer from 'rn-snoopy/stream/buffer'
 
-// new RN
-//import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter'
-
-// old RN
-//import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter'
+import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter'
 
 const emitter = new EventEmitter()
 
@@ -147,10 +143,10 @@ bars(info=>JSON.stringify(info.args).length)(
 # React Native Below 0.33
 
 I've submitted a modification to `MessageQueue` that allows for more flexible bridge spy,
-which was made available starting React Native v0.33. This will work seamlessly with Snoopy.
+which was made available starting React Native v0.33. Versions 0.33 and up will work seamlessly with Snoopy.
 
 For versions below 0.33, you have the option of locking to a legacy version of Snoopy which
-installs these modifications via monkeypatching `MessageQueue`:
+installs the required `MessageQueue` modifications by patching it externally:
 
 ```
 $ npm i rn-snoopy@1.0.6
