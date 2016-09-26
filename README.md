@@ -9,7 +9,7 @@
 <br/>
 
 
-Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge. 
+Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge using the [MessageQueue spy feature](https://github.com/facebook/react-native/pull/9160). 
 
 With Snoopy you can tame a stream of events, using
 [Rx](https://github.com/Reactive-Extensions/RxJS) and a few built-in goodies,
@@ -21,7 +21,8 @@ and the Native world happen. Optimizing and catching unexpected (bad)
 communications can make or break your performance. Being that central and
 sensitive place, it made sense to have tooling built around it.
 
-*NOTE*: Please see [bleeding edge](#bleeding-edge) to understand how Snoopy works and why you should only use it in DEV.
+*NOTE*: Snoopy is a developer tool, and you might want to flag it under `__DEV__`. I felt
+not doing this by default inside Snoopy will allow for creative uses even in production.
 
 
 <h3 align="center">
@@ -143,14 +144,17 @@ bars(info=>JSON.stringify(info.args).length)(
 ).subscribe()
 ```
 
-# Bleeding Edge
+# React Native Below 0.33
 
-Snoopy works by taking the current `SPY_MODE` flag in the bridge queue, and building upon it. It makes the event reporting more
-structured and generic, and plugs a firehose for you to sip events from. Since currently the existing `SPY_MODE` code only
-prints logs and the Bridge->Queue->log chain is a singleton chain initialized much before userland code, I had to monkeypatch the queue to make it report to something more generic.
+I've submitted a modification to `MessageQueue` that allows for more flexible bridge spy,
+which was made available starting React Native v0.33. This will work seamlessly with Snoopy.
 
-Although I have tested Snoopy in both old and modern React Native versions, hopefully, I could submit a PR that only handles the reporting mechanism into React Native upstream and the monkeypatch in Snoopy will go away.
+For versions below 0.33, you have the option of locking to a legacy version of Snoopy which
+installs these modifications via monkeypatching `MessageQueue`:
 
+```
+$ npm i rn-snoopy@1.0.6
+```
 
 # Contributing
 

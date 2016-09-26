@@ -8,7 +8,7 @@
   "dependencies": {
     "ramda": "^0.22.1",
     "react": "15.2.1",
-    "react-native": "0.31.0",
+    "react-native": "0.34.0",
     "rxjs": "^5.0.0-beta.11"
   }
 }
