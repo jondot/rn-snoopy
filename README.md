@@ -8,6 +8,7 @@
 <br/>
 <br/>
 
+_UPDATE_: I wrote [an article](https://medium.com/@jondot/debugging-react-native-performance-snoopy-and-the-messagequeue-fe014cd047ac) with the story behind this library.
 
 Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge using the [MessageQueue spy feature](https://github.com/facebook/react-native/pull/9160). 
 
