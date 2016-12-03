@@ -1,4 +1,4 @@
-import MessageQueue from 'react-native/Libraries/Utilities/MessageQueue'
+import MessageQueue from 'react-native/Libraries/BatchedBridge/MessageQueue'
 import Stream from './stream'
 import Log from './log'
 
