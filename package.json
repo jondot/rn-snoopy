@@ -1,11 +1,18 @@
 {
   "author": "Dotan Nahum",
   "dependencies": {
-    "rxjs": "^5.0.0-beta.10",
-    "lodash":"^3.10.0"
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "lodash": "^3.10.0",
+    "rxjs": "^5.0.0-beta.10"
   },
   "description": "Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge.",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "4.12.1",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "5.1.1"
+  },
   "directories": {},
   "license": "MIT",
   "main": "index.js",
