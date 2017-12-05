@@ -52,16 +52,12 @@ import bars from 'rn-snoopy/stream/bars'
 import filter from 'rn-snoopy/stream/filter'
 import buffer from 'rn-snoopy/stream/buffer'
 
-import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter'
+import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';
 
 const emitter = new EventEmitter()
 
 const events = Snoopy.stream(emitter)
 ```
-
-_For React Native >=0.48 use_
-
-`import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';`
 
 In the following examples, we're going to use `info`, the call descriptor.
 
@@ -130,9 +126,10 @@ Visualize "heavy" calls across the bridge. Set a threshold (`100`) and pop a Yel
 to warn about crossing the threshold.
 
 ```javascript
-bars(infoAry=>infoAry.length, 100, true).length)(
-  events
-).subscribe()
+bars(info=>JSON.stringify(info.args).length
+  200 /*command string length threshold*/,
+  true /*show yellow box*/
+)(events).subscribe()
 ```
 
 
