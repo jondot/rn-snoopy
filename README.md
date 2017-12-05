@@ -10,7 +10,7 @@
 
 _UPDATE_: I wrote [an article](https://medium.com/@jondot/debugging-react-native-performance-snoopy-and-the-messagequeue-fe014cd047ac) with the story behind this library.
 
-Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge using the [MessageQueue spy feature](https://github.com/facebook/react-native/pull/9160). 
+Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge using the [MessageQueue spy feature](https://github.com/facebook/react-native/pull/9160).
 
 With Snoopy you can tame a stream of events, using
 [Rx](https://github.com/Reactive-Extensions/RxJS) and a few built-in goodies,
@@ -58,6 +58,10 @@ const emitter = new EventEmitter()
 
 const events = Snoopy.stream(emitter)
 ```
+
+_For React Native >=0.48 use_
+
+`import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';`
 
 In the following examples, we're going to use `info`, the call descriptor.
 
@@ -126,10 +130,9 @@ Visualize "heavy" calls across the bridge. Set a threshold (`100`) and pop a Yel
 to warn about crossing the threshold.
 
 ```javascript
-bars(info=>JSON.stringify(info.args).length
-  200 /*command string length threshold*/,
-  true /*show yellow box*/
-)(events).subscribe()
+bars(infoAry=>infoAry.length, 100, true).length)(
+  events
+).subscribe()
 ```
 
 
@@ -168,4 +171,3 @@ To all [Contributors](https://github.com/jondot/rn-snoopy/graphs/contributors) -
 # Copyright
 
 Copyright (c) 2016 [Dotan Nahum](http://gplus.to/dotan) [@jondot](http://twitter.com/jondot). See [LICENSE](LICENSE.txt) for further details.
-

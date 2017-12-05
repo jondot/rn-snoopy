@@ -1,19 +1,14 @@
-import Rx from 'rxjs'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/do';
 import { spy as log } from '../log'
 
-
-// new RN
-//import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter'
-
-// old RN
-//import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter'
-
 class Stream {
-  constructor(emitter){
-    this.events = Rx.Observable.fromEvent(emitter, 'mqspy')
-    this.spy = (info)=>emitter.emit('mqspy', info)
+  constructor (emitter) {
+    this.events = Observable.fromEvent(emitter, 'mqspy')
+    this.spy = (info) => emitter.emit('mqspy', info)
   }
 }
 
 export default Stream
-
