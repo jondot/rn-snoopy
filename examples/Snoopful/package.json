@@ -1,14 +1,24 @@
 {
-  "name": "Snoopful",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
-  },
-  "dependencies": {
-    "ramda": "^0.22.1",
-    "react": "15.2.1",
-    "react-native": "0.34.0",
-    "rxjs": "^5.0.0-beta.11"
-  }
+	"name": "Snoopful",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"ramda": "^0.25.0",
+		"react": "16.0.0",
+		"react-native": "0.50.4",
+		"rn-snoopy": "^2.0.0"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
 }
