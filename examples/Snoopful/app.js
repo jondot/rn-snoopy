@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-} from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, ListView } from 'react-native'
 
 import Snoopy from 'rn-snoopy'
-import {stringify} from 'rn-snoopy/formatting'
+import { stringify } from 'rn-snoopy/formatting'
 import bars from 'rn-snoopy/stream/bars'
 import filter from 'rn-snoopy/stream/filter'
 import buffer from 'rn-snoopy/stream/buffer'
 
-import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter'
+import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter'
 const emitter = new EventEmitter()
 
 const events = Snoopy.stream(emitter)
 
-
-filter((info)=> info.method == 'createView', true)(events).subscribe()
+filter(info => info.method == 'createView', true)(events).subscribe()
 /*
 // show create views
 //
@@ -60,36 +53,34 @@ filter((info)=>{
 }, true)(events).subscribe()
 */
 
-
-
-
-
 import R from 'ramda'
 const data = R.range(1, 1000)
 
 class Snoopful extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
     this.state = {
-      dataSource: ds.cloneWithRows(data),
+      dataSource: ds.cloneWithRows(data)
     }
   }
 
-  render(){
+  render() {
     return (
       <View style={styles.container}>
         <ListView
-          style={{flex:1}}
+          style={{ flex: 1 }}
           containerStyle={styles.container}
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <View style={styles.row}>
-            <Text>User {rowData}</Text>
-          </View>}
+          renderRow={rowData => (
+            <View style={styles.row}>
+              <Text>User {rowData}</Text>
+            </View>
+          )}
           pageSize={100}
         />
       </View>
-    );
+    )
   }
 }
 
@@ -98,12 +89,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
-  row:{
-    flexDirection:'row',
-    alignItems:'center',
-  },
-});
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
+})
 
-AppRegistry.registerComponent('Snoopful', () => Snoopful);
+export default Snoopful
