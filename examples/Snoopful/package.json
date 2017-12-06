@@ -10,7 +10,7 @@
 		"ramda": "^0.25.0",
 		"react": "16.0.0",
 		"react-native": "0.50.4",
-		"rn-snoopy": "^2.0.0"
+		"rn-snoopy": "file:../../"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
