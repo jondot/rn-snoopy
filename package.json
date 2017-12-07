@@ -5,7 +5,8 @@
     "lodash": "^3.10.0",
     "rxjs": "5.5.2"
   },
-  "description": "Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge.",
+  "description":
+    "Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge.",
   "devDependencies": {
     "eslint": "4.12.1",
     "eslint-config-airbnb": "15.1.0",
@@ -27,5 +28,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "2.0.1"
+  "version": "2.0.2"
 }
