@@ -54,6 +54,9 @@ import buffer from 'rn-snoopy/stream/buffer'
 
 import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';
 
+//If you are using React 0.48 or below, then you should import:
+//import EventEmitter from 'react-native/Libraries/EventEmitter/EventEmitter';
+
 const emitter = new EventEmitter()
 
 const events = Snoopy.stream(emitter)
