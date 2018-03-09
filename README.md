@@ -126,7 +126,7 @@ Visualize "heavy" calls across the bridge. Set a threshold (`100`) and pop a Yel
 to warn about crossing the threshold.
 
 ```javascript
-bars(info=>JSON.stringify(info.args).length
+bars(info=>JSON.stringify(info.args).length,
   200 /*command string length threshold*/,
   true /*show yellow box*/
 )(events).subscribe()
