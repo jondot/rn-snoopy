@@ -5,6 +5,10 @@
     "lodash": "^3.10.0",
     "rxjs": "5.5.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jondot/rn-snoopy.git"
+  },
   "description":
     "Snoopy is a profiling tool for React Native, that lets you snoop on the React Native Bridge.",
   "devDependencies": {
